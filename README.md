@@ -16,3 +16,7 @@ For example, a blockchain may specify that the only acceptable hash must contain
 
 To calculate the hash, we need to add a number known as a nonce to the string being hashed. The nonce usually starts from zero and is incremented every time the hash is generated until a hash beginning with three zeros is found. Then the hash and the nonce will be stored for reference purposes.
 he chain array will contain every block or group of transactions added to the network. The pendingTransactions array will hold all transactions that have not been added to a block.
+
+The function will only execute once because the constructor function runs only once – at the beginning of the program.
+
+It is also the only time a random uncalculated hash or previousBlockHash is used because it is the first block in the chain and does not carry any transactions.
