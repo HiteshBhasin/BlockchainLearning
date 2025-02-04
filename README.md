@@ -11,3 +11,7 @@ BlockchainLearning
 // they need to generate the hashes and match them to 
 // the right block without breaking other blocks.
 // The whole process of adding a new block is known as mining. 
+The hash of a block gets generated when mining. The process of calculating the hash is known as proof of work
+For example, a blockchain may specify that the only acceptable hash must contain three zeros at the beginning.
+
+To calculate the hash, we need to add a number known as a nonce to the string being hashed. The nonce usually starts from zero and is incremented every time the hash is generated until a hash beginning with three zeros is found. Then the hash and the nonce will be stored for reference purposes.
