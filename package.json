@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "typescript": "^5.7.3"
+  },
+  "name": "blockchainlearning",
+  "version": "1.0.0",
+  "description": "BlockchainLearning",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
