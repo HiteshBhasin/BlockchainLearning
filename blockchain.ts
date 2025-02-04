@@ -2,6 +2,7 @@ import SHA256 from "sha256";
 class blockshain {
     
     /**
+     * https://www.freecodecamp.org/news/introduction-to-blockchain/
      * Represents the blockchain, which is an array of block objects.
      * Each block contains the following properties:
      * - `index`: The position of the block in the blockchain.
