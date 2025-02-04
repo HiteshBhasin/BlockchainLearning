@@ -1,6 +1,6 @@
 # BlockchainLearning
 BlockchainLearning
-
+https://www.freecodecamp.org/news/introduction-to-blockchain/
 // A blockchain is a connection of many blocks. 
 // So it begins with one block called the genesis block. 
 // Among other things, a block contains a hash, the previous block hash, 
@@ -15,3 +15,4 @@ The hash of a block gets generated when mining. The process of calculating the h
 For example, a blockchain may specify that the only acceptable hash must contain three zeros at the beginning.
 
 To calculate the hash, we need to add a number known as a nonce to the string being hashed. The nonce usually starts from zero and is incremented every time the hash is generated until a hash beginning with three zeros is found. Then the hash and the nonce will be stored for reference purposes.
+he chain array will contain every block or group of transactions added to the network. The pendingTransactions array will hold all transactions that have not been added to a block.
