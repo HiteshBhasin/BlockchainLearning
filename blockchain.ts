@@ -6,4 +6,5 @@
 // block’s hash to keep the network safe from hackers
 // This implies that for a hacker to gain access and break the network, 
 // they need to generate the hashes and match them to 
-// the right block without breaking other blocks
+// the right block without breaking other blocks.
+// The whole process of adding a new block is known as mining. 
