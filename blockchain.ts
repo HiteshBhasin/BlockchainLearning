@@ -1,4 +1,4 @@
-const SHA256 = require("sha256");
+import SHA256 from "sha256";
 class blockshain {
     
     /**
@@ -13,13 +13,15 @@ class blockshain {
      */
     chain: { index: number; 
         timestamp: number; 
-        transactions: never[]; 
+        transactions: { amount: any; sender: any; reciepient: any }[]; 
         nonce: number; 
         hash: string; 
         previousBlockHash: string; 
         }[];
 
-    pendingTransection: never[];
+    pendingTransection: { amount: any; 
+        sender: any; 
+        reciepient: any }[];
     // The constructor function is used 
     // to initialize the chain and pendingTransactions 
     // array
@@ -57,6 +59,40 @@ class blockshain {
                 nonce
             ).toString(); // SHA256 is concatinating the values. 
         }
+        return { nonce, hash };
+    }
+    // a function 
+    // that creates our transactions and 
+    // adds them to the list of pending transactions
+
+    createNewTransaction(amount, sender, reciepient){
+        const newTransaction ={
+            amount, 
+            sender, 
+            reciepient
+        };
+
+        this.pendingTransection.push(newTransaction);
     }
 
+    creatNewBlock(){
+        const timestamp = Date.now();
+        const previousBlockHash = this.getLastBlock().hash;
+        const transactions = this.pendingTransection;
+        const generateHash = this.generateHash(previousBlockHash, timestamp, transactions);
+
+        const newBlock = {
+            index: this.chain.length+1,
+            timestamp,
+            transactions,
+            nonce: generateHash.nonce,
+            hash: generateHash.hash,
+            previousBlockHash,
+        };
+
+        this.pendingTransection =[];
+        this.chain.push(newBlock);
+    }
+// The code above uses the getLastBlock function to access the previous block's hash. It calculates the hash of the current block, adds all the detail of the new block in an object, 
+// clears the pendingTransactions array, and pushes the new block into the chain
 }
