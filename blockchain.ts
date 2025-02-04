@@ -1,4 +1,6 @@
+const SHA256 = require("sha256");
 class blockshain {
+    
     /**
      * Represents the blockchain, which is an array of block objects.
      * Each block contains the following properties:
@@ -9,7 +11,14 @@ class blockshain {
      * - `hash`: The hash of the block, ensuring data integrity.
      * - `previousBlockHash`: The hash of the previous block in the chain, linking the blocks together.
      */
-    chain: { index: number; timestamp: number; transactions: never[]; nonce: number; hash: string; previousBlockHash: string; }[];
+    chain: { index: number; 
+        timestamp: number; 
+        transactions: never[]; 
+        nonce: number; 
+        hash: string; 
+        previousBlockHash: string; 
+        }[];
+
     pendingTransection: never[];
     // The constructor function is used 
     // to initialize the chain and pendingTransactions 
@@ -34,6 +43,20 @@ class blockshain {
 
     getLastBlock(){
         return this.chain[this.chain.length-1];
+    }
+    generateHash(previousHashBlock, timestamp, pendingHashBlock){
+        let hash=""; 
+        let nonce =0; 
+
+        while (hash.substring(0,3) ! =="000") {
+            nonce++; 
+            hash = SHA256 (
+                previousHashBlock +
+                timestamp+
+                JSON.stringify(pendingHashBlock)+
+                nonce
+            ).toString(); // SHA256 is concatinating the values. 
+        }
     }
 
 }
