@@ -92,6 +92,7 @@ class blockshain {
 
         this.pendingTransection =[];
         this.chain.push(newBlock);
+        return newBlock;
     }
 // The code above uses the getLastBlock function to access the previous block's hash. It calculates the hash of the current block, adds all the detail of the new block in an object, 
 // clears the pendingTransactions array, and pushes the new block into the chain
